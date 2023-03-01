@@ -1,3 +1,17 @@
+/*
+seamux provides a lightweight HTTP router and middleware framework for Go.
+
+The package defines a type RouteMux that allows adding routes and middleware to handle HTTP requests. A route is defined as a combination of a URL pattern, a set of HTTP methods, and an HTTP request handler.
+
+To create a new RouteMux, call seamux.New() function. You can then use the HandleFunc() method to add routes to the mux.
+
+The AddRoute() method is used internally to create a new route and add it to the list of routes in the RouteMux.
+
+The ServeHTTP() method is the main entry point for handling HTTP requests. It matches the incoming request to the appropriate route and executes its handler. Middleware can also be executed before and after the request handler is invoked.
+
+This implementation of HTTP routing uses regular expressions to match URL patterns and to extract parameters from URL paths. Parameters are defined as segments of the URL path that start with a colon (e.g. "/users/:id"). These parameters are then mapped to their corresponding values and made available to the request handler through the request object.
+*/
+
 package seamux
 
 import (
