@@ -79,7 +79,7 @@ func (m *RouteMux) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	//find a matching Route
 	for _, route := range m.routes {
 
-		if !containsMethod(route.methods, r.Method) {
+		if !validateMethod(route.methods, r.Method) {
 			continue
 		}
 
@@ -110,7 +110,7 @@ func (m *RouteMux) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-func containsMethod(s []string, str string) bool {
+func validateMethod(s []string, str string) bool {
 	if len(s) == 0 {
 		return true
 	}
