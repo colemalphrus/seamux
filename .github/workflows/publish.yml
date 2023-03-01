@@ -10,5 +10,5 @@ jobs:
   Publish:
     runs-on: ubuntu-latest
     steps:
-      - run: echo ${github.ref_name}
+      - run: echo ${{github.ref_name}}
       - run: GOPROXY=proxy.golang.org go list -m github.com/colemalphrus/seamux@${{ github.ref_name }}
