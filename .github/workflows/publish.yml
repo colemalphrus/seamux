@@ -7,7 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: go test ./...
-      - run:
   Publish:
     runs-on: ubuntu-latest
     steps:
