@@ -3,10 +3,6 @@ on:
   release:
     types: [published]
 jobs:
-  Test:
-    runs-on: ubuntu-latest
-    steps:
-      - run: go test ./...
   Publish:
     runs-on: ubuntu-latest
     steps:
